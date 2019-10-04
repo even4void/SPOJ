@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Usage:
-# $ cat test.in | python3 prime1.py | diff - test.out
+# $ cat prime1.in | python3 prime1.py | diff - prime1.out
 
 
 import sys
@@ -14,7 +14,6 @@ def primes(range):
 
 def main():
     data = sys.stdin.readlines()
-    iter = int(data[0].rstrip())
     for val in data[1:]:
         lst = primes(list(map(int, val.split())))
         print("\n".join([str(elt) for elt in lst]), end="\n\n")
